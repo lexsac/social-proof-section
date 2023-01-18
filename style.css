@@ -1,0 +1,36 @@
+/* Custom properties */
+:root {
+    --clr-very-dark-magenta-primary: hsl(300, 43%, 22%);
+    --clr-soft-pin-primary: hsl(333, 80%, 67%);
+
+    --dark-grayish-magenta-neutral: hsl(303, 10%, 53%);
+    --light-grayish-magenta-neutral: hsl(300, 24%, 96%);
+    --white-neutral: hsl(0, 0%, 100%);
+
+    --fw-light: 400;
+    --fw-regular: 500;
+    --fw-bold: 700;
+
+    --ff-main: 'League Spartan', sans-serif;
+
+    --fs-primary-heading: 2.5rem; /* 40px */
+    --fs-body: 1.1875rem; /* 19px */
+    --fs-extra-text: 1.0625rem; /* 17px */
+}
+
+@media (min-width: 56rem) {
+    :root {
+        --fs-primary-heading: 3.5rem; /* 56px */
+        --fs-body: 1.1875rem; /* 19px */
+        --fs-extra-text: 1.0625rem; /* 17px */
+    }
+}
+
+/* CSS reset */
+
+
+/* General styling */
+body {
+    
+}
+
