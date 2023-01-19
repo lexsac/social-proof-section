@@ -18,7 +18,7 @@
     --fs-extra-text: 1.0625rem; /* 17px */
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 50em) {
     :root {
         --fs-primary-heading: 3.5rem; /* 56px */
         --fs-body: 1.1875rem; /* 19px */
@@ -27,41 +27,103 @@
 }
 
 /* CSS reset */
+/* Credit: https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+/* Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+/* Remove default margin*/
+* {
+    margin: 0;
+}
+/* 3. Allow percentage-based heights in the application */
+html, body {
+    height: 100%;
+}
+/* Typographic tweaks! Add accessible line-height, improve text rendering */
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+/* Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+    font: inherit;
+}
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* Smaller line height for larger font sizes */
+h1 {
+    line-height: 1;
+}
 
 
 /* General spacing/styling for desktop and mobile */
+/* html, body {
+    height: auto;
+} */
+
 body {
-    margin: 1.5rem;
     font-family: var(--ff-main);
-}
-
-.main-text-section {
-    margin-top: 5rem;
-}
-
-.main-text-section, .reviews-section {
+    padding-top: 5rem;
     text-align: center;
+    background-image: 
+        url('./images/bg-pattern-top-mobile.svg'),
+        url('./images/bg-pattern-bottom-mobile.svg');
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
 }
 
-@media (min-width: 56rem) {
-    body {
-        margin: 6rem 8rem;
-    }
-    
-    .main-text-section {
-        margin-top: 5rem;
-    }
-    
-    .main-text-section, .reviews-section {
+.container {
+    max-width: 65rem;
+    padding: 0 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-section {
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 50em) {
+    .header-section {
+        display: flex;
         text-align: left;
-    }
-}
+        gap: 5rem;
+    } 
 
-/* Main text styling */
+    .testimonials {
+        display: flex;
+    }
+
+    body {
+    background-image: 
+        url('./images/bg-pattern-top-desktop.svg'),
+        url('./images/bg-pattern-bottom-desktop.svg');
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    background-size: 50%, 60%;
+    }
+} 
+
+/* Main header text styling */
 h1 {
     font-size: var(--fs-primary-heading);
     color: var(--clr-very-dark-magenta-primary);
     font-weight: var(--fw-bold);
+    line-height: 1;
+    max-width: 15ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main-text p {
@@ -69,58 +131,91 @@ h1 {
     line-height: 1.56rem;
     color: var(--clr-dark-grayish-magenta-neutral);
     font-size: var(--fs-body);
+    max-width: 40ch;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
 }
 
-@media (min-width: 56rem) {
-    
+@media (min-width: 50em) {
+    .main-text p {
+        margin-left: 0;
+    }
 }
 
 /* Reviews styling */
-.review {
-    background-color: var(--clr-light-grayish-magenta-neutral);
-    border-radius: 0.5rem;
-    padding: 0.5rem 0;
-    margin: 1rem;
-    width: 100%;
+.reviews {
+    padding-left: 0;
 }
 
-.review p {
+.review {
+    background-color: var(--clr-light-grayish-magenta-neutral);
     color: var(--clr-very-dark-magenta-primary);
     font-weight: var(--fw-bold);
     font-size: var(--fs-extra-text);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+    list-style: none;
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+   
+.review-stars {
+    display: flex;
+    justify-content: center;
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 50em) {
+    .review {
+        display: flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        gap: 1rem;
+    }
 
+    .review-1 {
+        transform: translateX(-2rem);
+    }
+
+    .review-3 {
+        transform: translateX(2rem);
+    }
 }
 
 /* Testimonials styling */
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .testimonial {
     background-color: var(--clr-very-dark-magenta-primary);
     border-radius: 0.5rem;
+    text-align: left;
+    padding: 2em;
     color: var(--clr-white-neutral);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .testimonial-header {
     display: flex;
     align-items: center;
-    padding-left: 1rem;
-    padding-top: 1rem;
+    font-size: var(--fs-extra-text);
 }
-
+ 
 .testimonial-header img {
     border-radius: 50%; 
-    width: 2.5rem;
-    height: 2.5rem;
+    margin-right: 1rem;
+    width: 3rem;
 }
 
-.testimonial-text {
-    padding-left: 1.5rem;
-}
-
-.testimonial-text h2, .testimonial-text p {
-    line-height: 0.3rem;
+.testimonial h2 {
     font-size: var(--fs-extra-text);
 }
 
@@ -128,19 +223,27 @@ h1 {
     color: var(--clr-soft-pin-primary);
 }
 
-.testimonial {
-    padding: 1rem;
-}
-
 .testimonial-quote {
+    margin-top: 1rem;
     line-height: 1.5rem;
     font-size: var(--fs-extra-text);
     font-weight: var(--fw-light);
-    padding: 0rem 1rem;
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 50em) {
     .testimonials {
-        display: flex;
+        flex-direction: row;
+    }
+
+    .testimonial {
+        max-width: 30rem;
+    }
+
+    .testimonial-2 {
+        transform: translateY(1rem);
+    }
+
+    .testimonial-3 {
+        transform: translateY(2rem);
     }
 }
