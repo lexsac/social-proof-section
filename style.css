@@ -3,9 +3,9 @@
     --clr-very-dark-magenta-primary: hsl(300, 43%, 22%);
     --clr-soft-pin-primary: hsl(333, 80%, 67%);
 
-    --dark-grayish-magenta-neutral: hsl(303, 10%, 53%);
-    --light-grayish-magenta-neutral: hsl(300, 24%, 96%);
-    --white-neutral: hsl(0, 0%, 100%);
+    --clr-dark-grayish-magenta-neutral: hsl(303, 10%, 53%);
+    --clr-light-grayish-magenta-neutral: hsl(300, 24%, 96%);
+    --clr-white-neutral: hsl(0, 0%, 100%);
 
     --fw-light: 400;
     --fw-regular: 500;
@@ -29,8 +29,118 @@
 /* CSS reset */
 
 
-/* General styling */
+/* General spacing/styling for desktop and mobile */
 body {
+    margin: 1.5rem;
+    font-family: var(--ff-main);
+}
+
+.main-text-section {
+    margin-top: 5rem;
+}
+
+.main-text-section, .reviews-section {
+    text-align: center;
+}
+
+@media (min-width: 56rem) {
+    body {
+        margin: 6rem 8rem;
+    }
+    
+    .main-text-section {
+        margin-top: 5rem;
+    }
+    
+    .main-text-section, .reviews-section {
+        text-align: left;
+    }
+}
+
+/* Main text styling */
+h1 {
+    font-size: var(--fs-primary-heading);
+    color: var(--clr-very-dark-magenta-primary);
+    font-weight: var(--fw-bold);
+}
+
+.main-text p {
+    font-weight: var(--fw-light);
+    line-height: 1.56rem;
+    color: var(--clr-dark-grayish-magenta-neutral);
+    font-size: var(--fs-body);
+}
+
+@media (min-width: 56rem) {
     
 }
 
+/* Reviews styling */
+.review {
+    background-color: var(--clr-light-grayish-magenta-neutral);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    margin: 1rem;
+    width: 100%;
+}
+
+.review p {
+    color: var(--clr-very-dark-magenta-primary);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-extra-text);
+}
+
+@media (min-width: 56rem) {
+
+}
+
+/* Testimonials styling */
+.testimonial {
+    background-color: var(--clr-very-dark-magenta-primary);
+    border-radius: 0.5rem;
+    color: var(--clr-white-neutral);
+    margin-bottom: 1rem;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.testimonial-header img {
+    border-radius: 50%; 
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.testimonial-text {
+    padding-left: 1.5rem;
+}
+
+.testimonial-text h2, .testimonial-text p {
+    line-height: 0.3rem;
+    font-size: var(--fs-extra-text);
+}
+
+.testimonial-text p {
+    color: var(--clr-soft-pin-primary);
+}
+
+.testimonial {
+    padding: 1rem;
+}
+
+.testimonial-quote {
+    line-height: 1.5rem;
+    font-size: var(--fs-extra-text);
+    font-weight: var(--fw-light);
+    padding: 0rem 1rem;
+}
+
+@media (min-width: 56rem) {
+    .testimonials {
+        display: flex;
+    }
+}
