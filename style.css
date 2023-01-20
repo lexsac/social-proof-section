@@ -18,7 +18,7 @@
     --fs-extra-text: 1.0625rem; /* 17px */
 }
 
-@media (min-width: 50em) {
+@media (min-width: 50rem) {
     :root {
         --fs-primary-heading: 3.5rem; /* 56px */
         --fs-body: 1.1875rem; /* 19px */
@@ -67,13 +67,9 @@ h1 {
 
 
 /* General spacing/styling for desktop and mobile */
-/* html, body {
-    height: auto;
-} */
-
 body {
     font-family: var(--ff-main);
-    padding-top: 5rem;
+    padding-top: 7rem;
     text-align: center;
     background-image: 
         url('./images/bg-pattern-top-mobile.svg'),
@@ -84,21 +80,21 @@ body {
 }
 
 .container {
-    max-width: 65rem;
+    max-width: 74rem;
     padding: 0 2rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 .header-section {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 50rem) {
     .header-section {
         display: flex;
         text-align: left;
-        gap: 5rem;
+        gap: 10%;
     } 
 
     .testimonials {
@@ -137,7 +133,7 @@ h1 {
     margin-top: 2rem;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 50rem) {
     .main-text p {
         margin-left: 0;
     }
@@ -154,7 +150,7 @@ h1 {
     font-weight: var(--fw-bold);
     font-size: var(--fs-extra-text);
     border-radius: 0.5rem;
-    padding: 0.5rem 0;
+    padding: 1rem 0 0.5rem 0;
     margin-top: 1rem;
     list-style: none;
     max-width: 30rem;
@@ -165,9 +161,14 @@ h1 {
 .review-stars {
     display: flex;
     justify-content: center;
+    gap: 0.5rem;
 }
 
-@media (min-width: 50em) {
+.review p {
+    padding-top: 0.5rem;
+}
+
+@media (min-width: 50rem) {
     .review {
         display: flex;
         align-items: center;
@@ -176,11 +177,15 @@ h1 {
     }
 
     .review-1 {
-        transform: translateX(-2rem);
+        transform: translateX(-3rem);
     }
 
     .review-3 {
-        transform: translateX(2rem);
+        transform: translateX(3rem);
+    }
+
+    .review p {
+        padding-top: 0;
     }
 }
 
@@ -221,6 +226,7 @@ h1 {
 
 .testimonial-text p {
     color: var(--clr-soft-pin-primary);
+    line-height: 1rem;
 }
 
 .testimonial-quote {
@@ -230,7 +236,7 @@ h1 {
     font-weight: var(--fw-light);
 }
 
-@media (min-width: 50em) {
+@media (min-width: 50rem) {
     .testimonials {
         flex-direction: row;
     }
